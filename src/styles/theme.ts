@@ -45,7 +45,7 @@ const neutral: Tuple<string, 7> = [
 
 const secondary: Tuple<string, 2> = ['#25262b', '#2C2E33'];
 
-const accent: Tuple<string, 5> = ['#d84c10', '#3e90f0', '#8e55ea', '#8c6584', '#dda73f'];
+const accent: Tuple<string, 5> = ['#8e55ea', '#8e55ea', '#8e55ea', '#8e55ea', '#8e55ea'];
 
 // https://github.com/mantinedev/mantine/blob/master/src/mantine-styles/src/theme/default-theme.ts
 

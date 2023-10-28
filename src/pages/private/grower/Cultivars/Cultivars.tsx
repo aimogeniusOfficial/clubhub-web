@@ -17,9 +17,9 @@ const Cultivars = () => {
       <Stack spacing='lg'>
         <Flex direction='column'>
           <Title order={1} weight={700} color='neutral.0'>
-            Cultivars & Genetics
+            Clubs at UC Berkeley
           </Title>
-          <Text color='neutral.3'>Explore genetics and cultivars</Text>
+          <Text color='neutral.3'>Explore clubs at University of California, Berkeley</Text>
         </Flex>
 
         <Divider />

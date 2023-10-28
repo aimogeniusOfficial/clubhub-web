@@ -37,7 +37,7 @@ export const growerBreederRoutesMap: RoutesMap = {
   '/grow-space/:growSpaceId/:activeTab?': <GrowSpaceDetail />,
   '/cultivars': <Cultivars />,
   '/cultivars/:cultivarId': <CultivarDetail />,
-  '/breeders': <Breeders />,
+  //'/breeders': <Breeders />, - Delete Breeders
   '/breeders/:breederId': <BreederDetail />,
   '/my-cultivars': <GrowerCultivars />,
   '/plant-management': <PlantManagement />,

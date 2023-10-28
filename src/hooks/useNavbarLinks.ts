@@ -51,30 +51,30 @@ export default function useNavbarLinks(): {
     } else {
       growerLinks.push({
         link: '/cultivars',
-        label: 'Verified Cultivars',
+        label: 'Club List',
         Icon: IconSeeding,
       });
     }
 
     growerLinks.push({
       link: '/my-cultivars',
-      label: 'My Cultivars',
+      label: 'My Clubs',
       Icon: IconSeeding,
     });
 
-    if (pathname === `${'/breeders/'}${breederId}`) {
-      growerLinks.push({
-        link: `/breeders/${breederId}`,
-        label: 'Breeders',
-        Icon: IconPlant2,
-      });
-    } else {
-      growerLinks.push({
-        link: '/breeders',
-        label: 'Breeders',
-        Icon: IconPlant2,
-      });
-    }
+    // if (pathname === `${'/breeders/'}${breederId}`) {
+    //   growerLinks.push({
+    //     link: `/breeders/${breederId}`,
+    //     label: 'Breeders',
+    //     Icon: IconPlant2,
+    //   });
+    // } else {
+    //   growerLinks.push({
+    //     link: '/breeders',
+    //     label: 'Breeders',
+    //     Icon: IconPlant2,
+    //   });
+    // }
 
     // growerLinks.push({
     //   link: '/journal',
@@ -82,15 +82,15 @@ export default function useNavbarLinks(): {
     //   Icon: IconTimeline,
     // });
 
-    growerLinks.push({
-      link: '/grow-cycle',
-      label: 'Grow Cycles',
-      Icon: IconRepeat,
-    });
+    // growerLinks.push({
+    //   link: '/grow-cycle',
+    //   label: 'Grow Cycles',
+    //   Icon: IconRepeat,
+    // });
 
     growerLinks.push({
       link: '/grow-space',
-      label: 'Grow Spaces',
+      label: 'Calendar',
       Icon: IconBox,
     });
 
@@ -100,17 +100,17 @@ export default function useNavbarLinks(): {
     //   Icon: IconAdjustments,
     // });
 
-    growerLinks.push({
-      link: '/vault',
-      label: 'My Seed Vault',
-      Icon: IconBoxModel,
-    });
+    // growerLinks.push({
+    //   link: '/vault',
+    //   label: 'My Seed Vault',
+    //   Icon: IconBoxModel,
+    // });
 
-    growerLinks.push({
-      link: '/chat',
-      label: 'Shaman Assistant',
-      Icon: IconMessageChatbot,
-    });
+    // growerLinks.push({
+    //   link: '/chat',
+    //   label: 'Shaman Assistant',
+    //   Icon: IconMessageChatbot,
+    // });
 
     return growerLinks;
   }

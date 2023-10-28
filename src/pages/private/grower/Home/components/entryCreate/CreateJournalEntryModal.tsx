@@ -188,7 +188,7 @@ const CreateJournalEntryModal = ({
         opened={isMainModalOpen}
         onClose={closeMainModal}
         title={
-          <Text weight={500}>{isCreation ? 'Create Journal Entry' : 'Edit Journal Entry'}</Text>
+          <Text weight={500}>{isCreation ? 'Post Club Announcement' : 'Edit Club Announcement'}</Text>
         }
         centered
       >
@@ -203,7 +203,7 @@ const CreateJournalEntryModal = ({
                 <GrowCycleSelect
                   userId={user.id}
                   size='xs'
-                  placeholder='Grow Cycle'
+                  placeholder='Select Club'
                   required
                   {...form.getInputProps('growCycleId')}
                 />
@@ -213,7 +213,7 @@ const CreateJournalEntryModal = ({
             <Textarea
               mt='xs'
               size='lg'
-              placeholder="What's in your garden, Grower?"
+              placeholder="What's your new club announcement?"
               variant='unstyled'
               withAsterisk
               minRows={5}

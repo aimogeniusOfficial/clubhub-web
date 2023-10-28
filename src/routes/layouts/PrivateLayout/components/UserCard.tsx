@@ -59,7 +59,7 @@ const UserCard = ({ opened }: UserCardProps): JSX.Element => {
           </Menu.Dropdown>
         </Menu>
         <>
-          {opened && userProfile?.data.subscriptionPlanId === '1' && (
+          {/* {opened && userProfile?.data.subscriptionPlanId === '1' && (
             <MediaQuery smallerThan='md' styles={{ display: 'none' }}>
               <Button
                 component={Link}
@@ -72,15 +72,15 @@ const UserCard = ({ opened }: UserCardProps): JSX.Element => {
                 Upgrade
               </Button>
             </MediaQuery>
-          )}
+          )} */}
 
-          {opened && userProfile?.data.subscriptionPlanId === '2' && (
+          {/* {opened && userProfile?.data.subscriptionPlanId === '2' && (
             <MediaQuery smallerThan='md' styles={{ display: 'none' }}>
               <Button variant='ghostFilled' fz='14px' fullWidth>
                 Grower Plan
               </Button>
             </MediaQuery>
-          )}
+          )} */}
         </>
       </Stack>
     </Paper>

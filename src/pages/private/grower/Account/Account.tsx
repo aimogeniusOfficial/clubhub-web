@@ -31,13 +31,13 @@ const Account = (): JSX.Element => {
       </Flex>
 
       <Tabs
-        color='green'
+        color='#8e55ea'
         value={activeTab || TABS.ACCOUNT_TAB}
         onTabChange={value => navigate(`/account/${value}`)}
       >
         <Tabs.List>
           <Tabs.Tab value={TABS.ACCOUNT_TAB}>Account</Tabs.Tab>
-          <Tabs.Tab value={TABS.BILLING_TAB}>Membership</Tabs.Tab>
+          {/* <Tabs.Tab value={TABS.BILLING_TAB}>Membership</Tabs.Tab> */}
           <Tabs.Tab value={TABS.PREFERENCES_TAB}>Preferences</Tabs.Tab>
           <Tabs.Tab value={TABS.NOTIFICATIONS_TAB}>Notifications</Tabs.Tab>
         </Tabs.List>

@@ -51,7 +51,7 @@ const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
             </Text>
           </div>
 
-          {opened && (
+          {/* {opened && (
             <Group>
               <Badge
                 color='accent.2'
@@ -64,7 +64,7 @@ const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
                 {isPaid ? `Grower` : `Free`}
               </Badge>
             </Group>
-          )}
+          )} */}
         </Group>
       </UnstyledButton>
     );

@@ -11,7 +11,7 @@ const GrowerCultivars = () => {
       <Stack spacing='lg'>
         <Flex direction='column'>
           <Title order={1} weight={700} color='neutral.0'>
-            My Cannabis Cultivars
+            My Clubs and Organizations
           </Title>
         </Flex>
 
@@ -20,11 +20,11 @@ const GrowerCultivars = () => {
         <GrowerCultivarTableConsole />
         <GrowerCultivarTable />
 
-        <Title mt={24}>My Plants</Title>
+        {/* <Title mt={24}>My Plants</Title>
         <Divider />
 
         <OtherCultivarTableConsole />
-        <OtherPlantCultivarTable />
+        <OtherPlantCultivarTable /> */}
       </Stack>
     </Container>
   );

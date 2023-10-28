@@ -107,7 +107,7 @@ const GrowerEntryCard = ({
               <Anchor
                 href={entry.createdBy === user.id ? `/grow-cycle/${entry.growCycleId}` : undefined}
               >
-                {entry.growCycleId ? 'Grow Cycle' : 'Common Journal'}
+                {/* {entry.growCycleId ? 'Grow Cycle' : 'Common Journal'} */}
               </Anchor>
             </MediaQuery>
             <MediaQuery largerThan='md' styles={{ display: 'none' }}>

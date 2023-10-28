@@ -70,22 +70,22 @@ const AuthenticatedLayout = ({ children }: { children: React.ReactNode }): JSX.E
     return (announcementDate.valueOf() - currentDate.valueOf()) / millisecondsPerDay < 7;
   });
 
-  const showGrowSpaceNotification = () => {
-    return showWarningNotification(
-      <Text onClick={() => navigate('/grow-space')} style={{ cursor: 'pointer' }}>
-        You have no grow spaces
-      </Text>,
-      <Text onClick={() => navigate('/grow-space')} style={{ cursor: 'pointer' }}>
-        Create a grow space to get started
-      </Text>,
-    );
-  };
+  // const showGrowSpaceNotification = () => {
+  //   return showWarningNotification(
+  //     <Text onClick={() => navigate('/grow-space')} style={{ cursor: 'pointer' }}>
+  //       You have no grow spaces
+  //     </Text>,
+  //     <Text onClick={() => navigate('/grow-space')} style={{ cursor: 'pointer' }}>
+  //       Create a grow space to get started
+  //     </Text>,
+  //   );
+  // };
 
-  useEffect(() => {
-    if (growSpaceData?.data && growSpaceData?.data?.length < 1 && isSuccess) {
-      showGrowSpaceNotification();
-    }
-  }, [growSpaceData?.data, isSuccess, showGrowSpaceNotification]);
+  // useEffect(() => {
+  //   if (growSpaceData?.data && growSpaceData?.data?.length < 1 && isSuccess) {
+  //     showGrowSpaceNotification();
+  //   }
+  // }, [growSpaceData?.data, isSuccess, showGrowSpaceNotification]);
 
   return (
     <>

@@ -132,7 +132,7 @@ const SubscriptionPlanSelection = (): ReactElement => {
           radius='md'
           onClick={handleSubscribe}
         >
-          Upgrade
+          {/* Upgrade */}
         </Button>
       </Card>
     </>

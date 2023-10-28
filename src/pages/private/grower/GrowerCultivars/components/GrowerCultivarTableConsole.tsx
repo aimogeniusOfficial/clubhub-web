@@ -17,7 +17,7 @@ const GrowerCultivarTableConsole = (): ReactElement => {
   return (
     <Group position='right'>
       <Button leftIcon={<IconPlus size={theme.fontSizes.md} />} onClick={openModal} size='xs'>
-        Add cultivar
+        Join a Club
       </Button>
     </Group>
   );
