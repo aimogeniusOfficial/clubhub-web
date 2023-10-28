@@ -41,13 +41,12 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     marginBottom: 12,
     borderRadius: theme.radius.md,
     transition: 'all 200ms',
-    color: theme.white,
     width: '100%',
 
     ...textVariantsStyles.base2,
 
     '&:hover': {
-      color: theme.white,
+      color: theme.colors.neutral[3],
     },
   },
 

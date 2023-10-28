@@ -34,13 +34,13 @@ const primary: Tuple<string, 10> = [
 ];
 
 const neutral: Tuple<string, 7> = [
-  '#fefefe',
-  '#f3f5f7',
-  '#e8ecef',
-  '#6c7275',
-  '#343839',
-  '#232627',
   '#141718',
+  '#232627',
+  '#343839',
+  '#6c7275',
+  '#e8ecef',
+  '#f3f5f7',
+  '#fefefe',
 ];
 
 const secondary: Tuple<string, 2> = ['#25262b', '#2C2E33'];
@@ -73,7 +73,7 @@ const commonStyles: MantineThemeOverride = {
     },
   },
 
-  white: '#e8ecef',
+  white: '#fefefe',
 
   cursorType: 'pointer',
 
