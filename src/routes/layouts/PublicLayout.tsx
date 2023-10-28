@@ -13,7 +13,6 @@ const useStyles = createStyles(theme => ({
   },
 
   banner: {
-    backgroundImage: `url(${Slogan})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -57,10 +56,10 @@ const PublicLayout = ({
   return (
     <div className={classes.wrapper}>
       <Paper className={classes.banner} radius={0} p={80} pr={120}>
-        <Title order={1} mt='md' size={44} color='white'>
+        <Title order={1} mt='md' size={44}>
           Unlock the power <br /> of OnlyPlants.ai
         </Title>
-        <Text size='lg' mt='xs' color='white'>
+        <Text size='lg' mt='xs'>
           Grow your plants with the smartest grow system - Experience the power of cultivation with
           us
         </Text>

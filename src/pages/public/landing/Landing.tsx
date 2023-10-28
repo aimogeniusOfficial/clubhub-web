@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import { createStyles, AppShell, Header, Navbar, Burger, MediaQuery, Anchor } from '@mantine/core';
+import { createStyles, AppShell, Header, Navbar, Burger, MediaQuery, Anchor, Button } from '@mantine/core';
 
 import LandingBody from './components/LandingBody';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles(theme => ({
   navbar: {
@@ -43,8 +44,9 @@ const useStyles = createStyles(theme => ({
   },
 }));
 
-export default function LandingNavBar(): JSX.Element {
+export default function Landing(): JSX.Element {
   const { classes } = useStyles();
+  const navigate = useNavigate();
   const [opened, setOpened] = useState(false);
   return (
     <AppShell
@@ -63,7 +65,9 @@ export default function LandingNavBar(): JSX.Element {
                 <Anchor className={classes.anchor}>About</Anchor>
                 <Anchor className={classes.anchor}>FAQ</Anchor>
                 <Anchor className={classes.anchor}>Sign Up</Anchor>
-                <Anchor className={classes.anchor}>Log In</Anchor>
+                <Button variant='outline' onClick={() => navigate('/login')}>
+                  Log In
+                </Button>
               </div>
             </div>
           </MediaQuery>

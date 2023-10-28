@@ -41,13 +41,12 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     marginBottom: 12,
     borderRadius: theme.radius.md,
     transition: 'all 200ms',
-    color: theme.white,
     width: '100%',
 
     ...textVariantsStyles.base2,
 
     '&:hover': {
-      color: theme.white,
+      color: theme.colors.neutral[3],
     },
   },
 
@@ -148,6 +147,7 @@ const Navbar = ({
                     {styles => (
                       <Title
                         style={opened ? {} : styles}
+                        color={theme.colors.primary[7]}
                         size={28}
                         weight={800}
                         sx={{ letterSpacing: '-0.04em' }}
