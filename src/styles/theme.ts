@@ -18,16 +18,17 @@ declare module '@mantine/core' {
 }
 
 const primary: Tuple<string, 10> = [
-  '#f2fbf3',
-  '#e0f8e4',
-  '#93e2a3',
-  '#c2f0ca',
-  '#5ccc72',
-  '#36b14e',
-  '#27903c',
-  '#227332',
-  '#205b2c',
-  '#1c4b27',
+  '#f3f2f8',
+  '#e5e0f7',
+  '#c2a3e7',
+  '#cac0f2',
+  '#9a72d9',
+  '#8e4ebf',
+  '#763ca4',
+  '#63328f',
+  '#572c87',
+  '#492774',
+
 ];
 
 const neutral: Tuple<string, 7> = [
