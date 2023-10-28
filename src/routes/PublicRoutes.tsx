@@ -4,7 +4,8 @@ import Auth from 'pages/public/auth/Auth';
 import RequestReset from 'pages/public/auth/RequestReset';
 import ResetPassword from 'pages/public/auth/ResetPassword';
 import SuccessPage from 'pages/public/auth/SuccessPage';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import Landing from 'pages/public/landing/Landing';
+import { Route, Routes } from 'react-router-dom';
 
 import PublicLayout from './layouts/PublicLayout';
 import { RoutesMap } from './types';
@@ -14,7 +15,7 @@ export const authRoutesMap: RoutesMap = {
   '/request-password': <RequestReset />,
   '/reset-password': <ResetPassword />,
   '/success': <SuccessPage />,
-  '*': <Navigate to='/login' />,
+  '*': <Landing />,
 };
 
 const PublicRoutes = (): JSX.Element => {
@@ -32,8 +33,7 @@ const PublicRoutes = (): JSX.Element => {
             <PublicLayout isAuthorizationLayout={checkIsAuthorizationLayout(path)}>
               {authRoutesMap[path]}
             </PublicLayout>
-          }
-        />
+        } />
       ))}
     </Routes>
   );
