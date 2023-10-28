@@ -17,6 +17,9 @@ declare module '@mantine/core' {
   }
 }
 
+// Default background index is 0
+const background: Tuple<string, 1> = ['e8ecef'];
+
 const primary: Tuple<string, 10> = [
   '#f3f2f8',
   '#e5e0f7',
@@ -50,6 +53,7 @@ const accent: Tuple<string, 5> = ['#d84c10', '#3e90f0', '#8e55ea', '#8c6584', '#
 const commonStyles: MantineThemeOverride = {
   colorScheme: 'light',
   colors: {
+    background,
     primary,
     secondary,
     neutral,
