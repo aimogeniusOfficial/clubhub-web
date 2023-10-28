@@ -13,7 +13,6 @@ const useStyles = createStyles(theme => ({
   },
 
   banner: {
-    // backgroundImage: `url(${Slogan})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
