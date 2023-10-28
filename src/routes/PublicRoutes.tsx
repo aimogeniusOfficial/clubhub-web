@@ -20,8 +20,6 @@ export const authRoutesMap: RoutesMap = {
 };
 
 const PublicRoutes = (): JSX.Element => {
-  // In case we need it
-
   const checkIsAuthorizationLayout = (path: string): boolean => {
     return ['/login', '/register', '/request-password', '/reset-password'].includes(path);
   };
@@ -33,7 +31,6 @@ const PublicRoutes = (): JSX.Element => {
           key={path}
           path={path}
           element={
-            // <Landing />
             <PublicLayout isAuthorizationLayout={checkIsAuthorizationLayout(path)}>
               {authRoutesMap[path]}
             </PublicLayout>
