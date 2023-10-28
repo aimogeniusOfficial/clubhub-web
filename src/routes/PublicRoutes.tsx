@@ -8,6 +8,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import PublicLayout from './layouts/PublicLayout';
 import { RoutesMap } from './types';
+import LandingPage from 'pages/public/landing/Landing';
+import LandingNavBar from 'pages/public/landing/components/LandingNavBar';
 
 export const authRoutesMap: RoutesMap = {
   '/login': <Auth />,
@@ -29,9 +31,10 @@ const PublicRoutes = (): JSX.Element => {
           key={path}
           path={path}
           element={
-            <PublicLayout isAuthorizationLayout={checkIsAuthorizationLayout(path)}>
-              {authRoutesMap[path]}
-            </PublicLayout>
+            <LandingNavBar />
+            // <PublicLayout isAuthorizationLayout={checkIsAuthorizationLayout(path)}>
+            //   {authRoutesMap[path]}
+            // </PublicLayout>
           }
         />
       ))}
