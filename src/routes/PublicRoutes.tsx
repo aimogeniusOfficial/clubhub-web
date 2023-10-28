@@ -9,8 +9,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import PublicLayout from './layouts/PublicLayout';
 import { RoutesMap } from './types';
-import PublicLayout from './layouts/PublicLayout';
-import Landing from 'pages/public/landing/Landing';
 
 export const authRoutesMap: RoutesMap = {
   '/login': <Auth />,
@@ -18,13 +16,9 @@ export const authRoutesMap: RoutesMap = {
   '/reset-password': <ResetPassword />,
   '/success': <SuccessPage />,
   '*': <Landing />,
-  '*': <Landing />,
 };
 
 const PublicRoutes = (): JSX.Element => {
-  const checkIsAuthorizationLayout = (path: string): boolean => {
-    return ['/login', '/register', '/request-password', '/reset-password'].includes(path);
-  };
   const checkIsAuthorizationLayout = (path: string): boolean => {
     return ['/login', '/register', '/request-password', '/reset-password'].includes(path);
   };
@@ -39,7 +33,8 @@ const PublicRoutes = (): JSX.Element => {
             <PublicLayout isAuthorizationLayout={checkIsAuthorizationLayout(path)}>
               {authRoutesMap[path]}
             </PublicLayout>
-        } />
+          }
+        />
       ))}
     </Routes>
   );
