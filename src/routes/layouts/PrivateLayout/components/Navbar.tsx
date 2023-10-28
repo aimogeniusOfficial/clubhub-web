@@ -138,7 +138,6 @@ const Navbar = ({
           <Group position={!opened && wrapped ? 'center' : 'apart'} align='center'>
             <Link to='/' className={classes.logo}>
               <Group spacing='sm'>
-                {/* <ShamanLogo /> */}
                 {openedOrNotWrapped && (
                   <Transition
                     mounted={showRouteLabelDebounced}

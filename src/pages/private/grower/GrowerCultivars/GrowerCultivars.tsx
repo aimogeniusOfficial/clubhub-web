@@ -20,11 +20,6 @@ const GrowerCultivars = () => {
         <GrowerCultivarTableConsole />
         <GrowerCultivarTable />
 
-        {/* <Title mt={24}>My Plants</Title>
-        <Divider />
-
-        <OtherCultivarTableConsole />
-        <OtherPlantCultivarTable /> */}
       </Stack>
     </Container>
   );

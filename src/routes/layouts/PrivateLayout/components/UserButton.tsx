@@ -50,21 +50,6 @@ const UserButton = forwardRef<HTMLButtonElement, UserButtonProps>(
               {username}
             </Text>
           </div>
-
-          {/* {opened && (
-            <Group>
-              <Badge
-                color='accent.2'
-                size='lg'
-                radius='sm'
-                tt='capitalize'
-                variant='filled'
-                w='100%'
-              >
-                {isPaid ? `Grower` : `Free`}
-              </Badge>
-            </Group>
-          )} */}
         </Group>
       </UnstyledButton>
     );

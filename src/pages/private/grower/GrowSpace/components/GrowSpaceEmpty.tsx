@@ -13,20 +13,8 @@ const GrowSpaceEmpty = ({ openCreateModal }: GrowSpaceEmptyProps): JSX.Element =
   return (
     <div>
       <Text py='xs' px='xl' size='md' align='center'>
-        You don&apos;t have any grow spaces yet.
+        You don&apos;t have any upcoming events
       </Text>
-      <Stack maw={200} mx='auto' spacing='xs'>
-        <Image src={emptySpaceImage} />
-        <Button
-          mt='xl'
-          radius='md'
-          mx='auto'
-          leftIcon={<IconPlus size={theme.fontSizes.md} />}
-          onClick={openCreateModal}
-        >
-          Add space
-        </Button>
-      </Stack>
     </div>
   );
 };

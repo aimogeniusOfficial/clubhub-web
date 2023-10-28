@@ -20,42 +20,9 @@ const CultivarsButtonsGroup = (): JSX.Element => {
 
   const exportCsv = useExportCsv();
 
-  // const handleExportCsv = (): void => {
-  //   exportCsv.mutate('cultivars', {
-  //     onSuccess: data => {
-  //       const response = data as PostgrestSingleResponse<any>;
-  //       const { data: responseData } = response;
-  //       const blob = new Blob([responseData], { type: 'text/csv' });
-  //       const url = URL.createObjectURL(blob);
-  //       const link = document.createElement('a');
-  //       link.href = url;
-  //       link.download = 'Cultivars.csv';
-  //       document.body.appendChild(link);
-  //       link.click();
-  //       document.body.removeChild(link);
-  //     },
-  //     onError: error => showErrorNotification('Failed to export plants', error.message),
-  //   });
-  // };
-
   return (
     <>
       <Group>
-        {/* TODO - Export and Import should not be available at the moment. It should be protected with permission */}
-        {/* <Button
-          leftIcon={<IconRowInsertTop size={theme.fontSizes.md} />}
-          onClick={openInsertModal}
-          size='xs'
-        >
-          Import CSV
-        </Button>
-        <Button
-          leftIcon={<IconPrinter size={theme.fontSizes.md} />}
-          onClick={handleExportCsv}
-          size='xs'
-        >
-          Export
-        </Button> */}
 
         {isAdmin(userProfile?.data) && (
           <Button
