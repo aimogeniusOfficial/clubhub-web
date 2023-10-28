@@ -4,6 +4,8 @@ import { MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { AuthProvider } from 'contexts/AuthContext';
 import { FeatureGateProvider } from 'contexts/FeatureGateContext';
 import { MaintenanceRouter } from 'MaintenanceRouter';
@@ -11,7 +13,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Router from './Router';
 import { lightTheme } from './styles/theme';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 function App(): JSX.Element {
   const queryClient = new QueryClient();
