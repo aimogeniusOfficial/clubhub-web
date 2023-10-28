@@ -51,65 +51,21 @@ export default function useNavbarLinks(): {
     } else {
       growerLinks.push({
         link: '/cultivars',
-        label: 'Verified Cultivars',
+        label: 'Club List',
         Icon: IconSeeding,
       });
     }
 
     growerLinks.push({
       link: '/my-cultivars',
-      label: 'My Cultivars',
+      label: 'My Clubs',
       Icon: IconSeeding,
-    });
-
-    if (pathname === `${'/breeders/'}${breederId}`) {
-      growerLinks.push({
-        link: `/breeders/${breederId}`,
-        label: 'Breeders',
-        Icon: IconPlant2,
-      });
-    } else {
-      growerLinks.push({
-        link: '/breeders',
-        label: 'Breeders',
-        Icon: IconPlant2,
-      });
-    }
-
-    // growerLinks.push({
-    //   link: '/journal',
-    //   label: 'Timeline Journal',
-    //   Icon: IconTimeline,
-    // });
-
-    growerLinks.push({
-      link: '/grow-cycle',
-      label: 'Grow Cycles',
-      Icon: IconRepeat,
     });
 
     growerLinks.push({
       link: '/grow-space',
-      label: 'Grow Spaces',
+      label: 'Calendar',
       Icon: IconBox,
-    });
-
-    // growerLinks.push({
-    //   link: '/light-control-panel',
-    //   label: 'Light Control Panel',
-    //   Icon: IconAdjustments,
-    // });
-
-    growerLinks.push({
-      link: '/vault',
-      label: 'My Seed Vault',
-      Icon: IconBoxModel,
-    });
-
-    growerLinks.push({
-      link: '/chat',
-      label: 'Shaman Assistant',
-      Icon: IconMessageChatbot,
     });
 
     return growerLinks;

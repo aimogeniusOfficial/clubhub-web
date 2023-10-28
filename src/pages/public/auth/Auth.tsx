@@ -116,6 +116,7 @@ const Auth = (): JSX.Element => {
         value={selectedAuth}
         onChange={setSelectedAuth}
         w='100%'
+        color='white'
       />
 
       <Divider my='lg' />

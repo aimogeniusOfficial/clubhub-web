@@ -87,7 +87,7 @@ const CultivarsList = ({ form }: CultivarListProps): JSX.Element => {
 
   const columns = [
     {
-      Header: 'Name',
+      Header: 'Club Name',
       accessor: 'name',
       Cell: ({ row }: { row: { original: CultivarRow } }) => {
         const { name } = row.original;
@@ -99,7 +99,7 @@ const CultivarsList = ({ form }: CultivarListProps): JSX.Element => {
       },
     },
     {
-      Header: () => <span>Breeder</span>,
+      Header: () => <span>Type</span>,
       accessor: 'breeder' as const,
       Cell: ({ row }: { row: any }) => <>{`${row.original.Breeder.name}`}</>,
     },
@@ -140,7 +140,7 @@ const CultivarsList = ({ form }: CultivarListProps): JSX.Element => {
       >
         <Group>
           <TextInput
-            placeholder='Search by name'
+            placeholder='Search by club name'
             value={searchInput}
             onChange={e => {
               setSearchInput(e.target.value);
@@ -149,7 +149,7 @@ const CultivarsList = ({ form }: CultivarListProps): JSX.Element => {
             icon={<IconSearch />}
           />
           <Select
-            placeholder='Breeder'
+            placeholder='Organizations'
             data={getFormattedSelectData(breederData?.data)}
             clearable
             required

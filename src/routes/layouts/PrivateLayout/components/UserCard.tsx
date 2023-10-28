@@ -58,30 +58,6 @@ const UserCard = ({ opened }: UserCardProps): JSX.Element => {
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
-        <>
-          {opened && userProfile?.data.subscriptionPlanId === '1' && (
-            <MediaQuery smallerThan='md' styles={{ display: 'none' }}>
-              <Button
-                component={Link}
-                variant='light'
-                color='yellow'
-                to='/account/billing'
-                fz='14px'
-                fullWidth
-              >
-                Upgrade
-              </Button>
-            </MediaQuery>
-          )}
-
-          {opened && userProfile?.data.subscriptionPlanId === '2' && (
-            <MediaQuery smallerThan='md' styles={{ display: 'none' }}>
-              <Button variant='ghostFilled' fz='14px' fullWidth>
-                Grower Plan
-              </Button>
-            </MediaQuery>
-          )}
-        </>
       </Stack>
     </Paper>
   );
