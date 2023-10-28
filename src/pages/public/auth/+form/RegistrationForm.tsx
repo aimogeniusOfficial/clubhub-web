@@ -46,6 +46,7 @@ const RegistrationForm = ({ signUp }: RegistrationFormProps): JSX.Element => {
           label='Email'
           placeholder='your@mail.com'
           size='md'
+          color='white'
           {...form.getInputProps('email')}
         />
 

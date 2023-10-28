@@ -60,7 +60,7 @@ const PublicLayout = ({
         <Title order={1} mt='md' size={44} color='white'>
           Unlock the power <br /> of OnlyPlants.ai
         </Title>
-        <Text size='lg' mt='xs'>
+        <Text size='lg' mt='xs' color='white'>
           Grow your plants with the smartest grow system - Experience the power of cultivation with
           us
         </Text>
