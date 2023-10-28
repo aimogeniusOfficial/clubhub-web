@@ -10,7 +10,7 @@ import { MaintenanceRouter } from 'MaintenanceRouter';
 import { BrowserRouter } from 'react-router-dom';
 
 import Router from './Router';
-import { darkTheme } from './styles/theme';
+import { lightTheme } from './styles/theme';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 function App(): JSX.Element {
@@ -18,7 +18,7 @@ function App(): JSX.Element {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MantineProvider theme={darkTheme} withGlobalStyles withNormalizeCSS>
+      <MantineProvider theme={lightTheme} withGlobalStyles withNormalizeCSS>
         <AuthProvider>
           <ModalsProvider>
             <Notifications zIndex={10000} position='top-right' />

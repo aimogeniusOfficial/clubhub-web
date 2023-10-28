@@ -29,7 +29,8 @@ const useStyles = createStyles(theme => ({
   },
 
   control: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    backgroundColor:
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.background[0],
     border: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? 'transparent' : theme.colors.gray[3]
     }`,

@@ -16,7 +16,8 @@ import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles(theme => ({
   card: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    backgroundColor:
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.background[0],
     width: '100%',
     maxWidth: 300,
     '@media (max-width: 40em)': {
