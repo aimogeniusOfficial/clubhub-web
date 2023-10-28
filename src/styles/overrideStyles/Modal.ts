@@ -3,11 +3,11 @@ import { MantineTheme } from '@mantine/core';
 const Modal = {
   styles: (theme: MantineTheme) => ({
     body: {
-      background: theme.colorScheme === 'dark' ? theme.colors.neutral[4] : theme.colors.neutral[0],
+      background: theme.colorScheme === 'dark' ? theme.colors.neutral[4] : theme.colors.neutral[6],
       padding: theme.spacing.xl,
     },
     header: {
-      background: theme.colorScheme === 'dark' ? theme.colors.neutral[4] : theme.colors.neutral[0],
+      background: theme.colorScheme === 'dark' ? theme.colors.neutral[4] : theme.colors.neutral[6],
       padding: theme.spacing.xl,
     },
     close: {
@@ -18,12 +18,12 @@ const Modal = {
       backgroundColor:
         theme.colorScheme === 'dark'
           ? theme.fn.rgba(theme.colors.neutral[4], 0.75)
-          : theme.colors.neutral[2],
+          : theme.colors.neutral[3],
       '&:hover': {
         backgroundColor:
           theme.colorScheme === 'dark'
             ? theme.fn.rgba(theme.colors.neutral[3], 0.5)
-            : theme.colors.neutral[1],
+            : theme.colors.neutral[2],
       },
       '& svg': {
         color: theme.colorScheme === 'dark' ? theme.colors.neutral[3] : theme.colors.neutral[4],
