@@ -147,6 +147,7 @@ const Navbar = ({
                     {styles => (
                       <Title
                         style={opened ? {} : styles}
+                        color={theme.colors.primary[7]}
                         size={28}
                         weight={800}
                         sx={{ letterSpacing: '-0.04em' }}
