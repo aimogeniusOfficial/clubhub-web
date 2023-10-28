@@ -46,7 +46,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         <TextInput
           required
           label='Email or username'
-          placeholder='your@mail.com'
+          placeholder='yours@mail.com'
           size='md'
           icon={
             isEmail ? <IconMail size={theme.fontSizes.xl} /> : <IconAt size={theme.fontSizes.xl} />

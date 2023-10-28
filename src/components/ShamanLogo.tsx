@@ -42,11 +42,11 @@ const ShamanLogo = (): JSX.Element => {
 
   return (
     <Group spacing='sm' position='center' mb='lg'>
-      <div className={classes.logoStar}>
+      {/* <div className={classes.logoStar}>
         <img src={TengriStar} alt='tengri-star' width={37} />
-      </div>
+      </div> */}
       <Title color='white' size={28} weight={800} sx={{ letterSpacing: '-0.04em' }}>
-        Shaman
+        clubhub
       </Title>
     </Group>
   );
