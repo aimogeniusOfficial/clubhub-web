@@ -75,7 +75,7 @@ const AuthenticatedLayout = ({ children }: { children: React.ReactNode }): JSX.E
       <AppShell
         className={classes.appshellStyles}
         hidden={isShellHidden}
-        navbar={<Navbar opened={opened} handleCloseHeader={close} />}
+        header={<Navbar opened={opened} handleCloseHeader={close} />}
         footer={<MobileNavbar opened={opened} toggle={toggle} />}
       >
         <div className={classes.content}>
