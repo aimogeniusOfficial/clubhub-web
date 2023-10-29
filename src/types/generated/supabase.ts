@@ -223,6 +223,11 @@ export interface Database {
           description: string | null
           created_at: string | null
           category: number | null
+          logo_url: string | null
+          members: number | null
+          instagram: string | null
+          tiktok: string | null
+          categoryId: any
         }
         Insert: {
           id?: number
@@ -230,6 +235,11 @@ export interface Database {
           description?: string | null
           created_at?: string | null
           category?: number | null
+          logo_url: string | null
+          members?: number | null
+          instagram?: string | null
+          tiktok?: string | null
+          categoryId?: any
         }
         Update: {
           id?: number
@@ -237,6 +247,11 @@ export interface Database {
           description?: string | null
           created_at?: string | null
           category?: number | null
+          logo_url: string | null
+          members?: number | null
+          instagram?: string | null
+          tiktok?: string | null
+          categoryId?: any
         }
         Relationships: [
           {
