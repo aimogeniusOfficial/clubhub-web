@@ -55,13 +55,12 @@ const PublicLayout = ({
 
   return (
     <div className={classes.wrapper}>
-      <Paper className={classes.banner} radius={0} p={80} pr={120}>
-        <Title order={1} mt='md' size={44}>
-          Unlock the power <br /> of OnlyPlants.ai
+      <Paper className={classes.banner} radius={0} p={100} pr={120}>
+        <Title order={1} mt='md' size={40}>
+        Unlocking the Best of UC Berkeley's Club Scene: <br></br>Your Hub for Campus Clubs and Events.<br></br>
         </Title>
         <Text size='lg' mt='xs'>
-          Grow your plants with the smartest grow system - Experience the power of cultivation with
-          us
+        Dive into a realm of unmatched opportunities, vibrant events, and lasting connections. With ClubHub, immerse yourself in the pulse of Berkeley's club culture. Embark on your journey and discover your niche.
         </Text>
       </Paper>
       <Container className={classes.content}>{children}</Container>
