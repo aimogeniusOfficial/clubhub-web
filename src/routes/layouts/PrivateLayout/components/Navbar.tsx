@@ -2,6 +2,8 @@ import React from 'react';
 
 import {
   createStyles,
+  Divider,
+  Flex,
   Group,
   Header,
   MediaQuery,
@@ -24,11 +26,12 @@ import UserCard from './UserCard';
 
 const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
   navbar: {
-    root: {
+    root: { 
       transition: 'all 400ms',
       gap: theme.spacing.md,
       display: 'flex',      
       alignItems: 'center',
+      position: 'fixed'
       
     },
   },
@@ -52,10 +55,11 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     },
   },
 
+  
+
   linkActive: {
     '&, &:hover': {
       backgroundColor: theme.colors.primary[5],
-      //boxShadow: `${theme.fn.rgba(theme.colors.primary[5], 0.2)} 0px 18px 50px -10px`,
       color: theme.white,
     },
   },
@@ -63,6 +67,7 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
   logoContainer: {
     padding: `${px(theme.spacing.md) * 2}px ${theme.spacing.md} ${theme.spacing.xl}`,
     
+
     
   },
   logo: {
@@ -74,8 +79,8 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     overflowX: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
-    //margin: '8px', // Add margin here (adjust the value to your preference)
-    padding: '8px', // Add margin here (adjust the value to your preference)
+    padding: '8px',
+    
     
     
     
@@ -132,7 +137,7 @@ const Navbar = ({
   if (isSmallScreen) {
     return (
       <Link to='/' className={classes.logo}>
-        <Group spacing='sm' >
+        <Group spacing='sm'>
           {openedOrNotWrapped && (
             <Transition
               mounted={showRouteLabelDebounced}
@@ -142,6 +147,7 @@ const Navbar = ({
               
             >
               {styles => (
+
                 <Title
                   style={opened ? {} : styles}
                   
@@ -164,63 +170,60 @@ const Navbar = ({
   return (
     <>
       <Header
-        px='md'
-        pb='lg'
-        height='5%'
-        bg='neutral.6'
+        
+        
+        
+        height='60px'
         hidden={!opened}
         styles={classes.navbar}
         w='100%'
         withBorder={false}
       >
+        
       
+      <div style={{ backgroundColor: '#fefefe' }}>
         
-        <Group align='center' position={!opened && wrapped ? 'center' : 'apart'} className={classes.linksContainer}>
-        {/* <Stack className={classes.logoContainer} align='top'> */}
-            <Link to='/' className={classes.logo}>
-              
-        
-        <Group spacing='sm'>
-                {openedOrNotWrapped && (
-                  <Transition
-                    mounted={showRouteLabelDebounced}
-                    transition='fade'
-                    duration={400}
-                    timingFunction='ease'
+        <Group px='5%' mt='5px' align='center' w='100%' position={!opened && wrapped ? 'center' : 'apart'}>
+          <Link to='/' className={classes.logo}>
+
+          <Group spacing='xl' w='10%'>
+            {openedOrNotWrapped && (
+              <Transition
+                mounted={showRouteLabelDebounced}
+                transition='fade'
+                duration={400}
+                timingFunction='ease'
+              >
+                {styles => (
+                  <Title
+                    style={opened ? {} : styles}
+                    color={theme.colors.primary[7]}
+                    size={28}
+                    weight={800}
+                    sx={{ letterSpacing: '-0.04em' }}
                   >
-                    {styles => (
-                      <Title
-                        style={opened ? {} : styles}
-                        color={theme.colors.primary[7]}
-                        size={28}
-                        weight={800}
-                        sx={{ letterSpacing: '-0.04em' }}
-                      >
-                        clubhub
-                      </Title>
-                    )}
-                  </Transition>
+                    clubhub
+                  </Title>
                 )}
+              </Transition>
+              )}
+          </Group>
+
+            </Link>
+            <Group align='right' w='80%' className={classes.linksContainer} grow>
+              {links}
+            
+              <UserCard opened={openedOrNotWrapped}/>
+              
+            </Group>
         </Group>
 
-
-
-              </Link>
-          
-        {/* </Stack> */}
-
-          <Group position='apart' w='70%' className={classes.linksContainer} grow>
-            {links}
-          </Group>
-          
-          <Group  className={classes.linksContainer} grow>
-            <UserCard opened={openedOrNotWrapped}/>
-          </Group>
-
-          </Group>
-        
-        
+        <Divider my="sm" color={theme.colors.primary[7]}/>
+      </div>
+      
       </Header>
+      
+
     </>
   );
 };

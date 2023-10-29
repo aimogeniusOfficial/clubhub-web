@@ -30,9 +30,9 @@ const UserCard = ({ opened }: UserCardProps): JSX.Element => {
     <Paper 
       
       radius='lg'
-      pl='xs'
+      pl='sm'
       pr='xl'
-      // p={opened ? 'xs' : 0}
+      //p={opened ? 'xs' : 0}
       shadow='sm'
       sx={theme => ({
         backgroundColor: theme.colors.neutral[5],  
