@@ -83,3 +83,7 @@ export type CultivarWithGeneticLineage = CultivarInsert & {
 export type GrowActionRow = Database['public']['Tables']['GrowAction']['Row'];
 export type GrowActionInsert = Database['public']['Tables']['GrowAction']['Insert'];
 export type GrowActionMeasureTypeEnum = Database['public']['Enums']['ActionMeasureType'];
+
+export type ClubRow = Database['public']['Tables']['Clubs']['Row'];
+
+export type ClubCategoryRow = Database['public']['Tables']['ClubCategory']['Row'];
