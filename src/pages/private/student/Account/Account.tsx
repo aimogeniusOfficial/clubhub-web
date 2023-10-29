@@ -7,6 +7,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import AccountPanel from './AcountPanel/AccountPanel';
 import MembershipPanel from './BillingPanel/MembershipPanel';
+import { Input, Textarea, Button, NumberInput } from '@mantine/core';
+import FormComponent from './FormComponent';
+
+
 
 const TABS = {
   ACCOUNT_TAB: 'account',
@@ -38,7 +42,7 @@ const Account = (): JSX.Element => {
         <Tabs.List>
           <Tabs.Tab value={TABS.ACCOUNT_TAB}>Account</Tabs.Tab>
           {/* <Tabs.Tab value={TABS.BILLING_TAB}>Membership</Tabs.Tab> */}
-          <Tabs.Tab value={TABS.PREFERENCES_TAB}>Preferences</Tabs.Tab>
+          <Tabs.Tab value={TABS.PREFERENCES_TAB}>Application Bio</Tabs.Tab>
           <Tabs.Tab value={TABS.NOTIFICATIONS_TAB}>Notifications</Tabs.Tab>
         </Tabs.List>
 
@@ -52,10 +56,9 @@ const Account = (): JSX.Element => {
 
         <Tabs.Panel value={TABS.PREFERENCES_TAB} pt='xs'>
           <Center py='xl'>
-            <EmptyState
-              title='In development'
-              description='We are working on this section. Try to get back later.'
-            />
+            <Tabs.Panel value={TABS.PREFERENCES_TAB} pt='xs'>
+              <FormComponent />
+            </Tabs.Panel>
           </Center>
         </Tabs.Panel>
 
