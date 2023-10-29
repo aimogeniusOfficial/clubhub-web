@@ -216,6 +216,50 @@ export interface Database {
           }
         ]
       }
+      Clubs: {
+        Row: {
+          id: number
+          name: string
+          description: string | null
+          created_at: string | null
+          category: number | null
+        }
+        Insert: {
+          id?: number
+          name?: string
+          description?: string | null
+          created_at?: string | null
+          category?: number | null
+        }
+        Update: {
+          id?: number
+          name?: string
+          description?: string | null
+          created_at?: string | null
+          category?: number | null
+        }
+        Relationships: [
+          {
+            columns: ["category"]
+            referencedRelation: "ClubCategory"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      ClubCategory: {
+        Row: {
+          id: number
+          name: string
+        }
+        Insert: {
+          id?: number
+          name?: string
+        }
+        Update: {
+          id?: number
+          name?: string
+        }
+      }
       Document: {
         Row: {
           content: string
