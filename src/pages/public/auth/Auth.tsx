@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Divider, Container, SegmentedControl } from '@mantine/core';
-import ShamanLogo from 'components/ShamanLogo';
+import ShamanLogo from 'components/ClubHubLogo';
 import { useAuth } from 'contexts/AuthContext';
 import { useFeatureGate } from 'contexts/FeatureGateContext';
 import { SignInDto } from 'contexts/models/sign-in-dto';

@@ -1,5 +1,5 @@
 import { matchRoutes, useLocation } from 'react-router-dom';
-import { growerBreederRoutesMap } from 'routes/ShamanAppRoutes';
+import { growerBreederRoutesMap } from 'routes/PrivateAppRoutes';
 import { authRoutesMap } from 'routes/PublicRoutes';
 
 export default function useCurrentRoute(): string {

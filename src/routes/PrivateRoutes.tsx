@@ -6,7 +6,7 @@ import { AccessRoleTypes } from 'types/enums/access-role-types';
 import Loading from '../pages/shared/Loading';
 
 const AdminAppRoutes = React.lazy(() => import('./AdminAppRoutes'));
-const ShamanAppRoutes = React.lazy(() => import('./ShamanAppRoutes'));
+const PrivateAppRoutes = React.lazy(() => import('./PrivateAppRoutes'));
 
 const PrivateRoutes = (): JSX.Element => {
   const { isLoading, data: userRolesResponse } = useUserRoles();
@@ -32,7 +32,7 @@ const PrivateRoutes = (): JSX.Element => {
     )
   ) {
     // TODO: separate grower and breeder routes
-    return <ShamanAppRoutes />;
+    return <PrivateAppRoutes />;
   }
 
   // TODO: Add proper unauthorized component
