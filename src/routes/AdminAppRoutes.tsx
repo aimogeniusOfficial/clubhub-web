@@ -5,7 +5,7 @@ import Uikit from 'pages/shared/Uikit/Uikit';
 import { Route, Routes } from 'react-router-dom';
 
 import AuthenticatedLayout from './layouts/PrivateLayout';
-import { growerBreederRoutesMap } from './ShamanAppRoutes';
+import { growerBreederRoutesMap } from './PrivateAppRoutes';
 import { RoutesMap } from './types';
 
 export const adminRoutesMap: RoutesMap = {
