@@ -29,6 +29,7 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
       gap: theme.spacing.md,
       display: 'flex',      
       alignItems: 'center',
+      
     },
   },
 
@@ -38,7 +39,7 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     justifyContent: wrapped ? 'center' : 'flex-start',
     textDecoration: 'none',
     padding: wrapped ? 9 : 12,
-    marginBottom: 12,
+    marginBottom: 0,
     borderRadius: theme.radius.md,
     transition: 'all 200ms',
     width: '100%',
@@ -54,13 +55,14 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
   linkActive: {
     '&, &:hover': {
       backgroundColor: theme.colors.primary[5],
-      boxShadow: `${theme.fn.rgba(theme.colors.primary[5], 0.2)} 0px 18px 50px -10px`,
+      //boxShadow: `${theme.fn.rgba(theme.colors.primary[5], 0.2)} 0px 18px 50px -10px`,
       color: theme.white,
     },
   },
 
   logoContainer: {
     padding: `${px(theme.spacing.md) * 2}px ${theme.spacing.md} ${theme.spacing.xl}`,
+    
     
   },
   logo: {
@@ -71,7 +73,12 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
   linksContainer: {
     overflowX: 'auto',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    //margin: '8px', // Add margin here (adjust the value to your preference)
+    padding: '8px', // Add margin here (adjust the value to your preference)
+    
+    
+    
   },
 }));
 
@@ -93,7 +100,7 @@ const Navbar = ({
   const openedOrNotWrapped = opened || !wrapped;
   const [showRouteLabelDebounced] = useDebouncedValue(openedOrNotWrapped, 300);
 
-  const links = navbarLinks.map(({ link, label, Icon }) => (
+  const links = navbarLinks.map(({ link, label, Icon}) => (
     <Link
       key={link}
       to={link}
@@ -125,20 +132,23 @@ const Navbar = ({
   if (isSmallScreen) {
     return (
       <Link to='/' className={classes.logo}>
-        <Group spacing='sm'>
+        <Group spacing='sm' >
           {openedOrNotWrapped && (
             <Transition
               mounted={showRouteLabelDebounced}
               transition='fade'
               duration={400}
               timingFunction='ease'
+              
             >
               {styles => (
                 <Title
                   style={opened ? {} : styles}
+                  
                   color={theme.colors.primary[7]}
                   size={28}
                   weight={800}
+                  
                   sx={{ letterSpacing: '-0.04em' }}
                 >
                   clubhub
@@ -156,17 +166,21 @@ const Navbar = ({
       <Header
         px='md'
         pb='lg'
-        height='18%'
+        height='5%'
         bg='neutral.6'
         hidden={!opened}
         styles={classes.navbar}
         w='100%'
         withBorder={false}
       >
-        <Stack className={classes.logoContainer}>
-          <Group position={!opened && wrapped ? 'center' : 'apart'} align='center'>
+      
+        
+        <Group align='center' position={!opened && wrapped ? 'center' : 'apart'} className={classes.linksContainer}>
+        {/* <Stack className={classes.logoContainer} align='top'> */}
             <Link to='/' className={classes.logo}>
-              <Group spacing='sm'>
+              
+        
+        <Group spacing='sm'>
                 {openedOrNotWrapped && (
                   <Transition
                     mounted={showRouteLabelDebounced}
@@ -187,29 +201,25 @@ const Navbar = ({
                     )}
                   </Transition>
                 )}
-              </Group>
-            </Link>
-
-            <Tooltip position='right' label={`${wrapped ? 'Show' : 'Hide'} navigation`}>
-              <span style={{ display: 'flex' }}>
-                <MediaQuery smallerThan='md' styles={{ display: 'none' }}>
-                  <IconSquareToggle
-                    size={24}
-                    fill={theme.colors.neutral[3]}
-                    color={theme.colors.neutral[3]}
-                    cursor='pointer'
-                    onClick={toggle}
-                  />
-                </MediaQuery>
-              </span>
-            </Tooltip>
-          </Group>
-        </Stack>
-
-        <Group className={classes.linksContainer} grow>
-          {links}
         </Group>
-        <UserCard opened={openedOrNotWrapped} />
+
+
+
+              </Link>
+          
+        {/* </Stack> */}
+
+          <Group position='apart' w='70%' className={classes.linksContainer} grow>
+            {links}
+          </Group>
+          
+          <Group  className={classes.linksContainer} grow>
+            <UserCard opened={openedOrNotWrapped}/>
+          </Group>
+
+          </Group>
+        
+        
       </Header>
     </>
   );

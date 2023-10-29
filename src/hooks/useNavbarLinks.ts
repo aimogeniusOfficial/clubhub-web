@@ -7,6 +7,9 @@ import {
   IconSmartHome,
   IconRepeat,
   TablerIconsProps,
+  IconCalendar,
+  IconStar,
+  IconDatabaseSearch,
 } from '@tabler/icons-react';
 import { useFeatureGate } from 'contexts/FeatureGateContext';
 import { useParams, useLocation } from 'react-router-dom';
@@ -17,7 +20,7 @@ import useProfile from './auth/useProfile';
 export default function useNavbarLinks(): {
   link: string;
   label: string;
-  Icon: (props: TablerIconsProps) => JSX.Element;
+  
 }[] {
   const { data: userProfile } = useProfile();
   const { breederId } = useParams();
@@ -52,20 +55,20 @@ export default function useNavbarLinks(): {
       growerLinks.push({
         link: '/cultivars',
         label: 'Club List',
-        Icon: IconSeeding,
+        Icon: IconDatabaseSearch,
       });
     }
 
     growerLinks.push({
       link: '/my-cultivars',
       label: 'My Clubs',
-      Icon: IconSeeding,
+      Icon: IconStar,
     });
 
     growerLinks.push({
       link: '/grow-space',
       label: 'Calendar',
-      Icon: IconBox,
+      Icon: IconCalendar,
     });
 
     return growerLinks;
