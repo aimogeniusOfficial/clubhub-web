@@ -27,14 +27,8 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     root: {
       transition: 'all 400ms',
       gap: theme.spacing.md,
-      display: 'flex',      // Ensure it's flex
+      display: 'flex',      
       alignItems: 'center',
-      
-
-      // [theme.fn.smallerThan('md')]: {
-      //   overflowX: 'auto',
-      //   paddingBottom: 90,
-      // },
     },
   },
 
