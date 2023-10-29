@@ -27,13 +27,19 @@ const UserCard = ({ opened }: UserCardProps): JSX.Element => {
   };
 
   return (
-    <Paper
+    <Paper 
+      
       radius='lg'
-      p={opened ? 'xs' : 0}
+      pl='xs'
+      pr='xl'
+      // p={opened ? 'xs' : 0}
       shadow='sm'
       sx={theme => ({
-        backgroundColor: theme.colors.neutral[5],
+        backgroundColor: theme.colors.neutral[5],  
+        width:'80%',
+        height:'70%'
       })}
+      
     >
       <Stack>
         <Menu position='top' offset={20} shadow='xl' width={200}>
