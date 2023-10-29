@@ -3,7 +3,7 @@ import React from 'react';
 import { createStyles } from '@mantine/core';
 import TengriStar from 'assets/logos/tengri-star.svg';
 
-import { resizeAnimation } from '../../../../components/ShamanLogo';
+import { resizeAnimation } from '../../../../components/ClubHubLogo';
 
 const useStyles = createStyles(theme => ({
   logoStar: {

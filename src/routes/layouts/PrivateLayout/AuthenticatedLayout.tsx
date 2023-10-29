@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { AppShell, Container, createStyles, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import useAnnouncements from 'hooks/announcements/useAnnouncements';
-import usePaginatedGrowSpaces from 'hooks/grow-space/usePaginatedGrowSpaces';
 import useCurrentRoute from 'hooks/useCurrentRoute';
 import { useNavigate } from 'react-router-dom';
 import { showWarningNotification } from 'utils/notifications';
@@ -57,7 +56,6 @@ const AuthenticatedLayout = ({ children }: { children: React.ReactNode }): JSX.E
   const isShellHidden = ['/reset-password', '/success'].includes(currentRoute);
 
   const { data: announcementData } = useAnnouncements();
-  const { data: growSpaceData, isSuccess } = usePaginatedGrowSpaces();
 
   const activeAnnouncements = announcementData?.data?.filter(announcement => {
     if (!announcement.start) {
