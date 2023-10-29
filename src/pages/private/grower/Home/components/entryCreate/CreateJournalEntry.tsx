@@ -34,7 +34,7 @@ const CreateJournalEntry = ({ growCycleId }: { growCycleId?: string }): JSX.Elem
         <Group position='apart' noWrap>
           <Group noWrap>
             <Avatar radius='xl' size='md' />
-            <Text size='md'>What&apos;s happening in your grow?</Text>
+            <Text size='md'>Share an update, event, or news about your club...</Text>
           </Group>
           <IconMoodSmile />
         </Group>
