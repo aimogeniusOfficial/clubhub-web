@@ -4,6 +4,7 @@ import Account from 'pages/private/grower/Account/Account';
 import PaymentPlanSelection from 'pages/private/grower/Account/BillingPanel/Membership/SubscriptionPlanSelection';
 import BreederDetail from 'pages/private/grower/BreederDetail';
 import Breeders from 'pages/private/grower/Breeders/Breeders';
+import ClubListLayout from 'pages/private/grower/ClubList/ClubListLayout';
 import CultivarDetail from 'pages/private/grower/CultivarDetail';
 import Cultivars from 'pages/private/grower/Cultivars/Cultivars';
 import GrowCycleDetailPage from 'pages/private/grower/GrowCycleDetail';
@@ -27,6 +28,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import AuthenticatedLayout from './layouts/PrivateLayout';
 import { RoutesMap } from './types';
 
+
 export const growerBreederRoutesMap: RoutesMap = {
   '/': <Home />,
   '/login': <Navigate to='/' replace />,
@@ -35,7 +37,7 @@ export const growerBreederRoutesMap: RoutesMap = {
   '/chat': <ShamanChat />,
   '/grow-space': <GrowSpace />,
   '/grow-space/:growSpaceId/:activeTab?': <GrowSpaceDetail />,
-  '/cultivars': <Cultivars />,
+  // '/cultivars': <ClubList />,
   '/cultivars/:cultivarId': <CultivarDetail />,
   '/breeders/:breederId': <BreederDetail />,
   '/my-cultivars': <GrowerCultivars />,
@@ -61,6 +63,7 @@ const ShamanAppRoutes = (): JSX.Element => {
           element={<AuthenticatedLayout>{growerBreederRoutesMap[path]}</AuthenticatedLayout>}
         />
       ))}
+      <Route path='/cultivars' element={<ClubListLayout />} />
       {import.meta.env.DEV && <Route path='/uikit' element={<Uikit />} />}
     </Routes>
   );
