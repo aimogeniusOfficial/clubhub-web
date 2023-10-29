@@ -3,14 +3,17 @@ import React from 'react';
 import {
   createStyles,
   Group,
+  Header,
   MediaQuery,
   Navbar as MantineNavbar,
   px,
+  Stack,
   Title,
   Tooltip,
   Transition,
+  useMantineTheme,
 } from '@mantine/core';
-import { useDebouncedValue, useDisclosure } from '@mantine/hooks';
+import { useDebouncedValue, useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { IconSquareToggle } from '@tabler/icons-react';
 import { textVariantsStyles } from 'components/typography/Text';
 import useNavbarLinks from 'hooks/useNavbarLinks';
@@ -24,11 +27,14 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     root: {
       transition: 'all 400ms',
       gap: theme.spacing.md,
+      display: 'flex',      // Ensure it's flex
+      alignItems: 'center',
+      
 
-      [theme.fn.smallerThan('md')]: {
-        overflowY: 'auto',
-        paddingBottom: 90,
-      },
+      // [theme.fn.smallerThan('md')]: {
+      //   overflowX: 'auto',
+      //   paddingBottom: 90,
+      // },
     },
   },
 
@@ -42,6 +48,7 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
     borderRadius: theme.radius.md,
     transition: 'all 200ms',
     width: '100%',
+    height: 'auto',
 
     ...textVariantsStyles.base2,
 
@@ -60,6 +67,7 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
 
   logoContainer: {
     padding: `${px(theme.spacing.md) * 2}px ${theme.spacing.md} ${theme.spacing.xl}`,
+    
   },
   logo: {
     textDecoration: 'none',
@@ -67,11 +75,9 @@ const useStyles = createStyles((theme, { wrapped }: { wrapped: boolean }) => ({
   },
 
   linksContainer: {
-    overflowY: 'auto',
-
-    [theme.fn.smallerThan('md')]: {
-      flex: 'none',
-    },
+    overflowX: 'auto',
+    display: 'flex',
+    justifyContent: 'space-between'
   },
 }));
 
@@ -89,6 +95,7 @@ const Navbar = ({
 
   const { classes, cx, theme } = useStyles({ wrapped });
 
+  const isSmallScreen = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
   const openedOrNotWrapped = opened || !wrapped;
   const [showRouteLabelDebounced] = useDebouncedValue(openedOrNotWrapped, 300);
 
@@ -121,19 +128,48 @@ const Navbar = ({
 
   const width = wrapped ? 70 : 303;
 
+  if (isSmallScreen) {
+    return (
+      <Link to='/' className={classes.logo}>
+        <Group spacing='sm'>
+          {openedOrNotWrapped && (
+            <Transition
+              mounted={showRouteLabelDebounced}
+              transition='fade'
+              duration={400}
+              timingFunction='ease'
+            >
+              {styles => (
+                <Title
+                  style={opened ? {} : styles}
+                  color={theme.colors.primary[7]}
+                  size={28}
+                  weight={800}
+                  sx={{ letterSpacing: '-0.04em' }}
+                >
+                  clubhub
+                </Title>
+              )}
+            </Transition>
+          )}
+        </Group>
+      </Link>
+    )
+  }
+
   return (
     <>
-      <MantineNavbar
+      <Header
         px='md'
         pb='lg'
-        h='100vh'
+        height='18%'
         bg='neutral.6'
         hidden={!opened}
         styles={classes.navbar}
-        width={{ md: width, lg: width }}
+        w='100%'
         withBorder={false}
       >
-        <MantineNavbar.Section className={classes.logoContainer}>
+        <Stack className={classes.logoContainer}>
           <Group position={!opened && wrapped ? 'center' : 'apart'} align='center'>
             <Link to='/' className={classes.logo}>
               <Group spacing='sm'>
@@ -174,16 +210,13 @@ const Navbar = ({
               </span>
             </Tooltip>
           </Group>
-        </MantineNavbar.Section>
+        </Stack>
 
-        <MantineNavbar.Section className={classes.linksContainer} grow>
+        <Group className={classes.linksContainer} grow>
           {links}
-        </MantineNavbar.Section>
-
-        <MantineNavbar.Section>
-          <UserCard opened={openedOrNotWrapped} />
-        </MantineNavbar.Section>
-      </MantineNavbar>
+        </Group>
+        <UserCard opened={openedOrNotWrapped} />
+      </Header>
     </>
   );
 };
