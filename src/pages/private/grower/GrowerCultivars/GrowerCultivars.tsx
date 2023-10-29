@@ -1,12 +1,14 @@
-import { Container, Divider, Flex, Stack, Text, Title } from '@mantine/core';
-import CultivarsList from '../Cultivars/components/CultivarsList';
-import GrowerCultivarTable from './components/GrowerCultivarTable';
-import GrowerCultivarTableConsole from './components/GrowerCultivarTableConsole';
-import OtherCultivarTableConsole from './components/OtherCultivarTableConsole';
-import OtherPlantCultivarTable from './components/OtherPlantCultivarTable';
+import { Container, Divider, Flex, Grid, Stack, Tabs, Text, Title } from '@mantine/core';
+import SimpleGrid from '@mantine/core';
+import ClubCardList from './components/ClubCardList';
+import useGetClubs from 'hooks/clubs/useGetClubs';
+import { TabsPanel } from '@mantine/core/lib/Tabs/TabsPanel/TabsPanel';
+
 
 const GrowerCultivars = () => {
-  return (
+  const { data : listOfClubs } = useGetClubs();
+
+  return (  
     <Container maw='936px'>
       <Stack spacing='lg'>
         <Flex direction='column'>
@@ -14,13 +16,16 @@ const GrowerCultivars = () => {
             My Clubs and Organizations
           </Title>
         </Flex>
-
-        <Divider />
-
-        <GrowerCultivarTableConsole />
-        <GrowerCultivarTable />
-
+      
+        <Divider/>
+       
+        {listOfClubs && (
+          <ClubCardList
+            clubArray={listOfClubs}
+          />
+          )}
       </Stack>
+      
     </Container>
   );
 };
